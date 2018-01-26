@@ -5,10 +5,7 @@ angular.module("MushroomApp", ["ngRoute"])
   $routeProvider
     .when("/", {
       templateUrl: "partials/mushroomList.html",
-      controller: "MushroomCtrl"
+      controller: "mushroomCtrl"
     })
     .otherwise("/")
-})
- .controller("MushroomCtrl", function($scope, $rootScope){
-     $scope.mushrooms = "welcome to Angular!";
- });
+});
