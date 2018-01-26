@@ -1,11 +1,14 @@
 'use strict';
 
-angular.module("MushroomApp").controller("mushroomCtrl", function($scope, mushroomFactory) {
+angular.module("MushroomApp").controller("MushroomCtrl", function($scope, MushroomFactory) {
 
-  mushroomFactory.getMushrooms()
+  MushroomFactory.getMushrooms()
   .then( (mushroomData) => {
-    console.log('mushroomData', mushroomData);
-    $scope.mushrooms = mushroomData.data.mushrooms;
+      $scope.mushroomArray = [];
+      for (let mushroom in mushroomData.data.mushrooms){
+          $scope.mushroomArray.push(mushroomData.data.mushrooms[mushroom]);
+      }
+    console.log($scope.mushroom);
   });
 
 });
