@@ -1,6 +1,13 @@
+<!-- give the input ng-model to set a global variable for the partial -->
+
 <input type="text" ng-model="mushroomName">
+
+<!-- add radio buttons with value of T and F to pick between edible mushooms using the bad model -->
 <input type="radio" value="false" name="poision" ng-model="bad">Poisonous
 <input type="radio" value="true" name="poision" ng-model="bad">non-Poisonous
+
+<!-- ng-repeat will repeat each mushroom the in array with a filter of name 
+that is bout to the input field in order to search for mushrooms -->
 <ul ng-repeat="mushroom in mushroomArray | filter: {name: mushroomName} | filter: bad">
 
     <li>{{mushroom.name+" "+mushroom.edible}}</li>

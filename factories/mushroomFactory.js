@@ -1,8 +1,9 @@
 'use strict';
 
+// initialize the module to encorporate the factory
 angular.module("MushroomApp").factory("mushroomFactory", function($q,$http){
 
-// Return a promise for our async XHR
+// Return a promise with XHR
 let getMushrooms = () => {
 return $q(function(resolve, reject) {
     $http
@@ -16,5 +17,6 @@ return $q(function(resolve, reject) {
          })
   });
 }
+// this will return the firebase data
 return { getMushrooms };
 });
