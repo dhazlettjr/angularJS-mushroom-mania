@@ -1,14 +1,14 @@
 "use strict";
 
-const app = angular.module("MushroomApp", ["ngRoute"])
+angular.module("MushroomApp", ["ngRoute"])
 .config($routeProvider => {
   $routeProvider
     .when("/", {
       templateUrl: "partials/mushroomList.html",
-      controller: "mushroomCtrl"
+      controller: "MushroomCtrl"
     })
     .otherwise("/")
 })
- .controller("mushroomCtrl", function($scope, $rootScope){
-     $scope.message = "welcome to Angular!";
+ .controller("MushroomCtrl", function($scope, $rootScope){
+     $scope.mushrooms = "welcome to Angular!";
  });
