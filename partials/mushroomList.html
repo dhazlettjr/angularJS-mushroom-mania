@@ -1,6 +1,6 @@
 <input type="text" ng-model="mushroomName">
-<ul>
-    <li ng-repeat="mushroom in mushroomList">
-        {{mushroom.name}}{{message}}
-    </li>
+<input type="radio" value="true" ng-model="poisonous">poisonous
+<input type="radio" value="false" ng-model="nonPoisonous">nonPoisonous
+<ul ng-repeat="mushroom in mushroomData | filter: {description: mushroomName, edible: poisonous}">
+    <li{{mushrooms.name}}</li>
 </ul>
